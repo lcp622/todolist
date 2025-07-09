@@ -88,7 +88,7 @@ $ http://localhost:3000/health
 ---
 
 ## 🚀 ¿Cómo entregarlo?
-Puedes subirlo a un repositorio de GitHub, o enviar el proyecto comprimido por correo (o por la plataforma que uses para aplicar).
+Puedes subirlo a un repositorio de GitHub, o enviar el proyecto comprimido por correo.
 
 ¡Gracias por tu tiempo y suerte! 🍀
 
