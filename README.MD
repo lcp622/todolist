@@ -80,11 +80,15 @@ $ docker-compose up --build
 ```bash
 $ http://localhost:3000
 ```
+
+- Para comprobar que todo esta en orden visita el endpoint desde Postman:
+```bash
+$ http://localhost:3000/health
+```
 ---
 
 ## 🚀 ¿Cómo entregarlo?
-
-Puedes subirlo a un repositorio de GitHub, GitLab o similar, o enviar el proyecto comprimido por correo (o por la plataforma que uses para aplicar).
+Puedes subirlo a un repositorio de GitHub, o enviar el proyecto comprimido por correo (o por la plataforma que uses para aplicar).
 
 ¡Gracias por tu tiempo y suerte! 🍀
 
