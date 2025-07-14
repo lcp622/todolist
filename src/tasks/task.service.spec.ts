@@ -3,55 +3,55 @@ import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { NotFoundException } from '@nestjs/common';
 
-describe('TasksService', () => {
-    let service: TasksService;
+describe('Servicio de Tareas', () => {
+    let servicio: TasksService;
 
     beforeEach(() => {
-        service = new TasksService();
+        servicio = new TasksService();
     });
 
-    it('should create and retrieve a task', () => {
+    it('debería crear y obtener una tarea', () => {
         const dto: CreateTaskDto = {
-            title: 'Test task',
-            description: 'Test description',
+            title: 'Prueba de Tareas',
+            description: 'Descripción de prueba',
             isDone: false,
         };
 
-        const task = service.createTask(dto);
-        const fetched = service.getTaskById(task.id);
+        const tarea = servicio.createTask(dto);
+        const obtenida = servicio.getTaskById(tarea.id);
 
-        expect(fetched).toEqual(task);
+        expect(obtenida).toEqual(tarea);
     });
 
-    it('should throw NotFoundException when task does not exist', () => {
-        expect(() => service.getTaskById(999)).toThrow(NotFoundException);
+    it('debería lanzar NotFoundException cuando la tarea no existe', () => {
+        expect(() => servicio.getTaskById(999)).toThrow(NotFoundException);
     });
 
-    it('should delete a task', () => {
-        const task = service.createTask({
-            title: 'Delete me',
-            description: 'To be deleted',
+    it('debería eliminar una tarea', () => {
+        const tarea = servicio.createTask({
+            title: 'Elimíname',
+            description: 'Para ser eliminada',
             isDone: false,
         });
 
-        service.deleteTask(task.id);
-        expect(() => service.getTaskById(task.id)).toThrow(NotFoundException);
+        servicio.deleteTask(tarea.id);
+        expect(() => servicio.getTaskById(tarea.id)).toThrow(NotFoundException);
     });
 
-    it('should update a task', () => {
-        const task = service.createTask({
-            title: 'Old Title',
-            description: 'Old Desc',
+    it('debería actualizar una tarea', () => {
+        const tarea = servicio.createTask({
+            title: 'Título viejo',
+            description: 'Descripción vieja',
             isDone: false,
         });
 
-        const updated = service.updateTask(task.id, {
-            title: 'New Title',
+        const actualizada = servicio.updateTask(tarea.id, {
+            title: 'Título nuevo',
             isDone: true,
         });
 
-        expect(updated.title).toBe('New Title');
-        expect(updated.description).toBe('Old Desc');
-        expect(updated.isDone).toBe(true);
+        expect(actualizada.title).toBe('Título nuevo');
+        expect(actualizada.description).toBe('Descripción vieja');
+        expect(actualizada.isDone).toBe(true);
     });
 });
