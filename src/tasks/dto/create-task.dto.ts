@@ -1,5 +1,14 @@
-// TODO: Add class-validator decorators
+import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
+
 export class CreateTaskDto {
-  title: string;
-  description: string;
+    @IsString()
+    @IsNotEmpty()
+    title: string;
+
+    @IsString()
+    @IsNotEmpty()
+    description: string;
+
+    @IsBoolean()
+    isDone: boolean;
 }
